@@ -5,7 +5,7 @@ namespace luya\helpers;
 use yii\db\ActiveQueryInterface;
 use yii\db\ActiveRecordInterface;
 use luya\helpers\ArrayHelper;
-use yii\helpers\Html;
+use yii\helpers\Html as YHtml;
 use luya\Exception;
 
 /**
@@ -161,7 +161,7 @@ class ExportHelper
             if (!is_scalar($item)) {
                 $item = "array";
             }
-            $item = $enclose.Html::encode($item).$enclose;
+            $item = $enclose.YHtml::encode($item).$enclose;
         });
 
         return implode($delimiter, $row) . PHP_EOL;
